@@ -36,7 +36,7 @@ export default function SpotForm({ lat, lng, existing, onSave, onDelete, onClose
 
   const handleAddTag = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && tagInput.trim()) {
-      setTags(t => [...new Set([...t, tagInput.trim().toLowerCase()])])
+      setTags(t => Array.from(new Set([...t, tagInput.trim().toLowerCase()])))
       setTagInput('')
     }
   }
